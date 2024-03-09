@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>-->小米粒儿<--</title>
+<!--    <script src="/static/socket.io.js"></script>-->
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f1f1f1;
+        flex-direction: column;
+    }
+
+    img {
+        max-width: 100%;
+        max-height: 80vh;
+        margin-bottom: 20px;
+    }
+
+    #fullScreenButton {
+        background-color: #3498db;
+        color: #fff;
+        font-size: 16px;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+
+    #playButton {
+        background-color: #3498db;
+        color: #fff;
+        font-size: 16px;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<!--<img id="imagePlayer" src="{{ url_for('video_feed') }}">-->
+<button id="fullScreenButton">全屏</button>
+<button id="playButton">开始播放（内测，别点）</button>
+<audio id="audioPlayer" controls></audio>
+<!--    <script src="streamingAudio.js"></script>-->
+<script>
+        const imagePlayerContainer = document.getElementById('imagePlayer');
+        const fullscreenBtn = document.getElementById('fullScreenButton');
+
+        function openFullscreen() {
+            if (imagePlayerContainer.requestFullscreen) {
+                imagePlayerContainer.requestFullscreen();
+            } else if (imagePlayerContainer.mozRequestFullScreen) { /* Firefox */
+                imagePlayerContainer.mozRequestFullScreen();
+            } else if (imagePlayerContainer.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+                imagePlayerContainer.webkitRequestFullscreen();
+            } else if (imagePlayerContainer.msRequestFullscreen) { /* IE/Edge */
+                imagePlayerContainer.msRequestFullscreen();
+            }
+        }
+
+        fullscreenBtn.addEventListener('click', openFullscreen);
+    </script>
+
+<script src = "/static/js/websocket_audio.js"></script>
+</body>
+
+</html>
