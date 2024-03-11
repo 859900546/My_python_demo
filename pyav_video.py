@@ -7,7 +7,7 @@ import dxshot
 output_bytes = BytesIO()
 
 # 创建一个输出容器
-container = av.open(output_bytes, 'w', format='mp4')
+container = av.open("output_bytes.mp4", 'wb', format='mp4')
 
 # 添加视频流
 stream = container.add_stream('h264', rate=30)  # 使用 H.264 编码，帧率为 30

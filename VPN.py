@@ -1,7 +1,6 @@
 import random
 import subprocess
 import time
-import pyautogui
 import pyperclip
 
 data = str(random.randint(10, 2000)) + 'wobushijianben' + str(random.randint(10, 2000)) + '@163.com'

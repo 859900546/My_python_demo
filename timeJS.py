@@ -41,7 +41,6 @@ def screenshot():
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     return img
 
-
 # import ctypes
 # import cv2
 # import numpy as np

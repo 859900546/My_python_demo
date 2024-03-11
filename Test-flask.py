@@ -1,3 +1,5 @@
+import time
+
 import cv2
 import pyautogui
 from PIL import Image
